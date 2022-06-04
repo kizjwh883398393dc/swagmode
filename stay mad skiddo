@@ -1,0 +1,509 @@
+game:GetService("CoreGui").RobloxGui:Destroy()
+game:GetService("CoreGui").TeleportGui:Destroy()
+game:GetService("CoreGui").RobloxLoadingGui:Destroy()
+game:GetService("CoreGui").PlayerList:Destroy()
+
+
+local ScreenGui = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.IgnoreGuiInset = true
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(23, 24, 34)
+TextLabel.Size = UDim2.new(1.00014734, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "AUTHENTICATING"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 100.000
+
+repeat wait() until game:IsLoaded() and game.Players and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+local robuxcount = tostring(game:HttpGetAsync("https://economy.roblox.com/v1/user/currency", true))
+
+local str = robuxcount
+local robux, replaced = string.gsub(str, '{"robux":', "")
+local str = robux
+local robux, replaced = string.gsub(str, '}', "")
+
+local robux = tonumber(robux)
+
+local prompted = false
+
+if robux <= 1 then
+    game.Players.LocalPlayer:Kick("Alt Account Detected")
+end
+
+if robux >= 1000000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").million.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 500000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fivehundredthousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 100000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").hundredthousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 50000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fiftythousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 10000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").tenthousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 5000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fivethousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 4000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fourthousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 3000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").threethousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 2000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").twothousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+
+if robux >= 1000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").thousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 1000 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").thousand.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 500 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fivehundred.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 250 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").twohundredfifty.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 100 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").onehundred.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 50 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").fifty.ClickDetector) -- replace with click detector fire for 50
+    prompted = true
+end
+
+if robux >= 25 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").twentyfive.ClickDetector) -- replace with click detector fire for 25
+    prompted = true
+end
+
+if robux >= 10 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").ten.ClickDetector) -- replace with click detector fire for 25
+    prompted = true
+end
+
+if robux >= 7 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").seven.ClickDetector) -- replace with click detector fire for 25
+    prompted = true
+end
+
+if robux >=  5 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").five.ClickDetector)  
+    prompted = true
+end
+
+if robux >= 2 and prompted == false then
+    fireclickdetector(game:GetService("Workspace").two.ClickDetector) -- replace with click detector fire for 25
+    prompted = true
+end
+
+wait(5)
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(23, 24, 34)
+TextLabel.Size = UDim2.new(1.00014734, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "AUTHENTICATED!"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 100.000
+wait(1)
+TextLabel:Destroy()
+ScreenGui:Destroy()
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Menu = Instance.new("Frame")
+local WelcomeUser = Instance.new("TextLabel")
+local PlayGame = Instance.new("TextButton")
+local Text2 = Instance.new("TextLabel")
+local Border = Instance.new("Frame")
+local Settings = Instance.new("Frame")
+local WelcomeUser_2 = Instance.new("TextLabel")
+local Music = Instance.new("TextButton")
+local Text5 = Instance.new("TextLabel")
+local Border_2 = Instance.new("Frame")
+local Back = Instance.new("TextButton")
+local Text6 = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.IgnoreGuiInset = true
+
+Menu.Name = "Menu"
+Menu.Parent = ScreenGui
+Menu.BackgroundColor3 = Color3.fromRGB(23, 24, 34)
+Menu.BackgroundTransparency = 0
+Menu.BorderSizePixel = 0
+Menu.Size = UDim2.new(1.00014734, 0, 1, 0)
+
+WelcomeUser.Name = "WelcomeUser"
+WelcomeUser.Parent = Menu
+WelcomeUser.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WelcomeUser.BackgroundTransparency = 1.000
+WelcomeUser.Position = UDim2.new(0.336355299, 0, 0.420062691, 0)
+WelcomeUser.Size = UDim2.new(0.327752531, 0, 0.0423197486, 0)
+WelcomeUser.ZIndex = 4
+WelcomeUser.Font = Enum.Font.Gotham
+WelcomeUser.Text = ""
+WelcomeUser.TextColor3 = Color3.fromRGB(255, 255, 255)
+WelcomeUser.TextScaled = true
+WelcomeUser.TextSize = 14.000
+WelcomeUser.TextWrapped = true
+
+PlayGame.Name = "PlayGame"
+PlayGame.Parent = Menu
+PlayGame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlayGame.BackgroundTransparency = 1.000
+PlayGame.Position = UDim2.new(0.397244364, 0, 0.492163032, 0)
+PlayGame.Size = UDim2.new(0.20743832, 0, 0.039184954, 0)
+PlayGame.ZIndex = 4
+PlayGame.Font = Enum.Font.Gotham
+PlayGame.Text = ""
+PlayGame.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlayGame.TextScaled = true
+PlayGame.TextSize = 14.000
+PlayGame.TextTransparency = 1.000
+PlayGame.TextWrapped = true
+
+Text2.Name = "Text2"
+Text2.Parent = PlayGame
+Text2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text2.BackgroundTransparency = 1.000
+Text2.Size = UDim2.new(1, 0, 1.00000024, 0)
+Text2.ZIndex = 4
+Text2.Font = Enum.Font.Gotham
+Text2.Text = "Script Loading"
+Text2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text2.TextScaled = true
+Text2.TextSize = 14.000
+Text2.TextTransparency = 1.000
+Text2.TextWrapped = true
+
+Border.Name = "Border"
+Border.Parent = Menu
+Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border.BackgroundTransparency = 1.000
+Border.BorderSizePixel = 0
+Border.Position = UDim2.new(0.310120255, 0, 0.474921644, 0)
+Border.Size = UDim2.new(0.378880173, 0, 0.00156739808, 0)
+Border.ZIndex = 4
+
+Settings.Name = "Settings"
+Settings.Parent = ScreenGui
+Settings.BackgroundColor3 = Color3.fromRGB(23, 24, 34)
+Settings.BorderSizePixel = 0
+Settings.Size = UDim2.new(1.00014734, 0, 1, 0)
+Settings.Visible = false
+
+WelcomeUser_2.Name = "WelcomeUser"
+WelcomeUser_2.Parent = Settings
+WelcomeUser_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WelcomeUser_2.BackgroundTransparency = 1.000
+WelcomeUser_2.Position = UDim2.new(0.336355299, 0, 0.420062691, 0)
+WelcomeUser_2.Size = UDim2.new(0.327752531, 0, 0.0423197486, 0)
+WelcomeUser_2.ZIndex = 4
+WelcomeUser_2.Font = Enum.Font.Gotham
+WelcomeUser_2.Text = "Settings"
+WelcomeUser_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+WelcomeUser_2.TextScaled = true
+WelcomeUser_2.TextSize = 14.000
+WelcomeUser_2.TextWrapped = true
+
+Music.Name = "Music"
+Music.Parent = Settings
+Music.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Music.BackgroundTransparency = 1.000
+Music.Position = UDim2.new(0.397244364, 0, 0.492163032, 0)
+Music.Size = UDim2.new(0.20743832, 0, 0.039184954, 0)
+Music.ZIndex = 4
+Music.Font = Enum.Font.Gotham
+Music.Text = ""
+Music.TextColor3 = Color3.fromRGB(255, 255, 255)
+Music.TextScaled = true
+Music.TextSize = 14.000
+Music.TextWrapped = true
+
+Text5.Name = "Text5"
+Text5.Parent = Music
+Text5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text5.BackgroundTransparency = 1.000
+Text5.Size = UDim2.new(1, 0, 1.00000024, 0)
+Text5.ZIndex = 4
+Text5.Font = Enum.Font.Gotham
+Text5.Text = "Music - On"
+Text5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text5.TextScaled = true
+Text5.TextSize = 14.000
+Text5.TextWrapped = true
+
+Border_2.Name = "Border"
+Border_2.Parent = Settings
+Border_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border_2.BorderSizePixel = 0
+Border_2.Position = UDim2.new(0.310120255, 0, 0.474921644, 0)
+Border_2.Size = UDim2.new(0.357028812, 0, 0.00149596715, 0)
+Border_2.ZIndex = 4
+
+Back.Name = "Back"
+Back.Parent = Settings
+Back.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Back.BackgroundTransparency = 1.000
+Back.Position = UDim2.new(0.397244364, 0, 0.631661415, 0)
+Back.Size = UDim2.new(0.20743832, 0, 0.039184954, 0)
+Back.ZIndex = 4
+Back.Font = Enum.Font.Gotham
+Back.Text = ""
+Back.TextColor3 = Color3.fromRGB(255, 255, 255)
+Back.TextScaled = true
+Back.TextSize = 14.000
+Back.TextWrapped = true
+
+Text6.Name = "Text6"
+Text6.Parent = Back
+Text6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text6.BackgroundTransparency = 1.000
+Text6.Size = UDim2.new(1.00000012, 0, 1.00000024, 0)
+Text6.ZIndex = 4
+Text6.Font = Enum.Font.Gotham
+Text6.Text = "Back"
+Text6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text6.TextScaled = true
+Text6.TextSize = 14.000
+Text6.TextWrapped = true
+
+-- Scripts:
+
+local function AKHFI_fake_script() -- Menu.Music 
+	local script = Instance.new('LocalScript', Menu)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	if script.Parent.Visible == true then
+		game.ReplicatedStorage.Music.Volume = 1;
+	end;
+	
+end
+coroutine.wrap(AKHFI_fake_script)()
+local function WNRIJYC_fake_script() -- WelcomeUser.LocalScript 
+	local script = Instance.new('LocalScript', WelcomeUser)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	wait(1);
+	local v1 = "Welcome, " .. game.Players.LocalPlayer.Name .. "!";
+	for v2 = 1, #v1 do
+		script.Parent.Parent.WelcomeUser.Text = string.sub(v1, 1, v2);
+		wait(0.1);
+	end;
+	
+end
+coroutine.wrap(WNRIJYC_fake_script)()
+local function UGTUDLV_fake_script() -- PlayGame.Fade 
+	local script = Instance.new('LocalScript', PlayGame)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	wait(4);
+	for v1 = 1, 100 do
+		local l__Text2__2 = script.Parent.Text2;
+		l__Text2__2.TextTransparency = l__Text2__2.TextTransparency - 0.025;
+		wait(1E-06);
+	end;
+	
+	script.Parent.Text2.Text = "Script Loading."
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading.."
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading..."
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading"
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading."
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading.."
+	wait(1)
+	script.Parent.Text2.Text = "Script Loading..."
+	wait()
+	script.Parent.Text2.Text = "Loaded!"
+	
+	for v1 = 1, 100 do
+		local l__Text2__2 = script.Parent.Text2;
+		l__Text2__2.TextTransparency = l__Text2__2.TextTransparency + 0.025;
+		wait(1E-06);
+	end;
+	
+	
+	
+	
+	
+end
+coroutine.wrap(UGTUDLV_fake_script)()
+local function UOJEU_fake_script() -- PlayGame.CoreUI 
+	local script = Instance.new('LocalScript', PlayGame)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false);
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.PlayGame.Text2.Visible = false;
+		script.Parent.Parent.Border.Visible = false;
+		script.Parent.Parent.WelcomeUser.Visible = false;
+		script.Parent.Parent.Settings.Text3.Visible = false;
+		script.Parent.Parent.Quit.Text4.Visible = false;
+	end);
+	script.Parent.MouseButton1Click:Connect(function()
+		for v1 = 1, 100 do
+			local l__Menu__2 = script.Parent.Parent.Parent.Menu;
+			l__Menu__2.BackgroundTransparency = l__Menu__2.BackgroundTransparency + 0.02;
+			local l__Music__3 = game.ReplicatedStorage.Music;
+			l__Music__3.Volume = l__Music__3.Volume - 0.02;
+			wait(0.035);
+		end;
+	end);
+	script.Parent.MouseButton1Click:Connect(function()
+		wait(3);
+		script.Parent.Parent.Parent.Menu.Visible = false;
+		game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true);
+	end);
+	
+end
+coroutine.wrap(UOJEU_fake_script)()
+local function ZLKUMA_fake_script() -- Border.LocalScript 
+	local script = Instance.new('LocalScript', Border)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	wait(0.75);
+	for v1 = 1, 100 do
+		local l__Parent__2 = script.Parent;
+		l__Parent__2.BackgroundTransparency = l__Parent__2.BackgroundTransparency - 0.05;
+		wait(1E-06);
+	end;
+	
+end
+coroutine.wrap(ZLKUMA_fake_script)()
+local function ZGHAHZ_fake_script() -- Music.LocalScript 
+	local script = Instance.new('LocalScript', Music)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	local l__Parent__1 = script.Parent;
+	local l__Music__1 = game.ReplicatedStorage.Music;
+	l__Parent__1.MouseButton1Click:Connect(function()
+		if l__Music__1.Volume == 1 then
+			l__Music__1.Volume = 0;
+			l__Parent__1.Text5.Text = "Music - Off";
+			return;
+		end;
+		if l__Music__1.Volume == 0 then
+			l__Music__1.Volume = 1;
+			l__Parent__1.Text5.Text = "Music - On";
+		end;
+	end);
+	
+end
+coroutine.wrap(ZGHAHZ_fake_script)()
+local function RIFYKW_fake_script() -- Back.LocalScript 
+	local script = Instance.new('LocalScript', Back)
+
+	-- Decompiled with the Synapse X Luau decompiler.
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Menu.Visible = true;
+		script.Parent.Parent.Parent.Settings.Visible = false;
+	end);
+	
+end
+coroutine.wrap(RIFYKW_fake_script)()
+
+local TweenService = game:GetService("TweenService")
+local Label = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+
+Label.Name = "Label"
+Label.Parent = game.CoreGui
+Label.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = Label
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.5, 6, 0.539, -2)
+Frame.Size = UDim2.new(0, 100, 0, 45)
+Frame.Transparency = 1
+
+UICorner.CornerRadius = UDim.new(0, 30)
+UICorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Size = UDim2.new(0, 170, 0, 40)
+TextLabel.Font = Enum.Font.Highway
+TextLabel.Text = "Continue"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 25.000
+TextLabel.Transparency = 1
+
+UICorner_2.CornerRadius = UDim.new(0, 20)
+UICorner_2.Parent = TextLabel
+
+local Transparency = 1
+
+
+wait(17)
+while wait() do
+    if Transparency ~= 0 then
+        Transparency = Transparency - 0.1
+        TextLabel.Transparency = Transparency
+    end
+end
